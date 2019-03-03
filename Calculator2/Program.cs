@@ -6,7 +6,7 @@ namespace Calculator2
     {
         public static void Main()
         {
-            //double result = 0;
+            
 
             // Create a simple calculator that asks the user to input two different numbers 
             // and whether they want to add, subtract, multiply or divide them. 
@@ -22,52 +22,48 @@ namespace Calculator2
             Console.WriteLine("Would you like to add, subtract, multiply, or divide?");
             string calculation = Console.ReadLine();
 
+            double result = 0;
+
             if (calculation == "add")
             {
-                double result = Add_ReturnValue(firstNumber, secondNumber);
-                Console.WriteLine($"Total = {result}");
+                result = Add(firstNumber, secondNumber);
             }
-            if (calculation == "subtract")
+            else if (calculation == "subtract")
             {
-                double result = Subtract_ReturnValue(firstNumber, secondNumber);
-                Console.WriteLine($"Total = {result}");
+                result = Subtract(firstNumber, secondNumber);
             }
-            if (calculation == "*")
+            else if (calculation == "multiply")
             {
-                double result = Multiply_ReturnValue(firstNumber, secondNumber);
-                Console.WriteLine($"Total = {result}");
+                result = Multiply(firstNumber, secondNumber);
             }
-            if (calculation == "/")
+            else if (calculation == "divide")
             {
-                double result = Divide_ReturnValue(firstNumber, secondNumber);
-                Console.WriteLine($"Total = {result}");
+                result = Divide(firstNumber, secondNumber);
             }
 
-
-            
-
+            Console.WriteLine($"Total = {result}");
             Console.ReadLine();
         }
 
-        public static double Add_ReturnValue(double firstNumber, double secondNumber)
+        public static double Add(double firstNumber, double secondNumber)
         {
             double total = firstNumber + secondNumber;
-            return total;
+            return total;  
         }
 
-        public static double Subtract_ReturnValue(double firstNumber, double secondNumber)
+        public static double Subtract(double firstNumber, double secondNumber)
         {
             double total = firstNumber - secondNumber;
             return total;
         }
 
-        public static double Multiply_ReturnValue(double firstNumber, double secondNumber)
+        public static double Multiply(double firstNumber, double secondNumber)
         {
             double total = firstNumber * secondNumber;
             return total;
         }
 
-        public static double Divide_ReturnValue(double firstNumber, double secondNumber)
+        public static double Divide(double firstNumber, double secondNumber)
         {
             double total = firstNumber / secondNumber;
             return total;
